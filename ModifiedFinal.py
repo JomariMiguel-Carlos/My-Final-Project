@@ -36,6 +36,7 @@ def add_contact(pb):
 
         pb.append(contact)
 
+        return pb
 
 def edit_contact(pb):
     print("\t\t\t            EDIT EXISTING CONTACT")
@@ -77,6 +78,26 @@ def edit_contact(pb):
                 new[3] = bago
                 pb[i] = new
                 print("Edited Successfully!!!")
+
+                return pb
+
+    def remove_existing(pb):
+        print("\t\t\t            REMOVE EXISTING CONTACT")
+        query = str(input("Please enter the First name of the contact you wish to remove: ")).capitalize()
+
+        temp = 0
+
+        for i in range(len(pb)):
+            if query == pb[i][0]:
+                temp += 1
+
+                print(pb.pop(i))
+
+                print("This query has now been removed :)")
+
+                keme = input("Hit Enter to go back to Main Menu...")
+
+                return pb
 
     elif sel == "3":
 
