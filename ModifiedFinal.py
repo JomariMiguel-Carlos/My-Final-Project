@@ -2,12 +2,13 @@ print ("\n*********************      FINAL PROJECT       *********************")
 print ("\n\n*********************      PROGRAMMED BY       *********************")
 print ("*********************  CARLOS, JOMARI MIGUEL   *********************")
 
+import sys
+
 people = []
 
 isRunning = True
 
-while isRunning:
-
+def menu():
     print("\n\n********************************************************************")
     print("*\t\t\t            Address Book Main                          *")
     print("********************************************************************")
