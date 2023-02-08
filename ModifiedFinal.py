@@ -162,3 +162,13 @@ def thanks():
     print("Please visit again!")
     print("********************************************************************")
     sys.exit("Goodbye, have a nice day ahead!")
+
+add_book = []
+cnum = 0
+choice = 0
+while choice in (0, 1, 2, 3, 4, 5):
+    menu()
+    choice = int(input("Please enter your choice: "))
+    if choice == 1:
+        add_book = add_contact(add_book)
+        cnum += 1
