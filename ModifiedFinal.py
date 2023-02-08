@@ -39,7 +39,7 @@ def add_contact(pb):
         return pb
 
 def edit_contact(pb):
-    print("\t\t\t            EDIT EXISTING CONTACT")
+print("\t\t\t            EDIT EXISTING CONTACT")
     query =str(input("Please enter the First name of the contact you wish to change: ")).capitalize()
     temp = 0
 
@@ -81,9 +81,9 @@ def edit_contact(pb):
 
                 return pb
 
-    def remove_existing(pb):
-        print("\t\t\t            REMOVE EXISTING CONTACT")
-        query = str(input("Please enter the First name of the contact you wish to remove: ")).capitalize()
+def remove_existing(pb):
+    print("\t\t\t            REMOVE EXISTING CONTACT")
+    query = str(input("Please enter the First name of the contact you wish to remove: ")).capitalize()
 
         temp = 0
 
@@ -99,20 +99,15 @@ def edit_contact(pb):
 
                 return pb
 
-    elif sel == "3":
-
-        print("\n" * 50)
-
-        for x in people:
-
-            print("Name: " + x[0])
-            print("Age: " + x[1])
-            print("Address: " + x[2])
-            print("Phone Number: " + x[3])
-
-            print("\n")
-
-        input("Press enter/return to continue")
+def display_all(pb):
+    print("\t\t\t            ALL CONTACTS")
+    print("First Name,     Last Name,      Address,        Number")
+    if not pb:
+        print("List is empty: []")
+    else:
+        for i in range(len(pb)):
+            pb.sort()
+            print(*pb[i], sep=",\t\t\t\t")
 
     elif sel == "4":
         isRunning = False
