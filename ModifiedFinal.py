@@ -36,21 +36,47 @@ def add_contact(pb):
 
         pb.append(contact)
 
-    elif sel == "2":
 
-        print("\n" * 50)
+def edit_contact(pb):
+    print("\t\t\t            EDIT EXISTING CONTACT")
+    query =str(input("Please enter the First name of the contact you wish to change: ")).capitalize()
+    temp = 0
 
-        count = 1
+    for i in range(len(pb)):
+        if query == pb[i][0]:
+            temp += 1
+            print(pb[i])
+            choice = int(input(
+                "Enter data you want to change\n\n\t1. First Name\n\t2. Last Number\n\t3. Address\n\t4. Contact Number\nPlease enter: "))
+            new = []
+            new = pb[i]
+            print(new)
+            check = -1
 
-        for x in people:
-            print(str(count) + ": " + x[0])
-            count += 1
+            if choice == 1:
+                bago = str(input("Enter the new First Name: ")).capitalize()
+                new[0] = bago
+                pb[i] = new
+                print("Edited Successfully!!!")
 
-        deleted = int(input("Pick One: ")) - 1
+            elif choice == 2:
+                bago = str(input("Enter the new Last Name: ")).capitalize()
+                new[1] = bago
+                pb[i] = new
+                print("Edited Successfully!!!")
 
-        if deleted == len(people):
+            elif choice == 3:
+                bago = str(input("Enter the new Address: ")).capitalize()
+                new[2] = bago
+                print(new)
+                print("Edited Successfully!!!")
 
-            del(people[deleted])
+
+            elif choice == 4:
+                bago = int(input("Enter the new Number: "))
+                new[3] = bago
+                pb[i] = new
+                print("Edited Successfully!!!")
 
     elif sel == "3":
 
