@@ -109,5 +109,49 @@ def display_all(pb):
             pb.sort()
             print(*pb[i], sep=",\t\t\t\t")
 
-    elif sel == "4":
-        isRunning = False
+def search_existing(pb):
+    print("\t\t\t            SEARCH EXISTING CONTACT")
+    choice = int(input("Enter search criteria\n\t1. First Name\n\t2. Last Number\n\t3. Address\n\t4. Contact Number\nPlease enter: "))
+
+    temp = []
+    check = -1
+
+    if choice == 1:
+        query = str(
+            input("\nPlease enter the first name of the contact you wish to search: ")).capitalize()
+        for i in range(len(pb)):
+            if query == pb[i][0]:
+                check = i
+                temp.append(pb[i])
+
+    elif choice == 2:
+        query = str(
+            input("\nPlease enter the last name of the contact you wish to search: ")).capitalize()
+        for i in range(len(pb)):
+            if query == pb[i][1]:
+                check = i
+                temp.append(pb[i])
+
+    elif choice == 3:
+        query = str(input("\nPlease enter the Address of the contact you wish to search: ")).capitalize()
+        for i in range(len(pb)):
+            if query == pb[i][2]:
+                check = i
+                temp.append(pb[i])
+
+    elif choice == 4:
+        query = int(input("\nPlease enter the number of the contact you wish to search: "))
+        for i in range(len(pb)):
+            if query == pb[i][3]:
+                check = i
+                temp.append(pb[i])
+
+    else:
+        print("Invalid search criteria")
+        return -1
+    if check == -1:
+        return -1
+    else:
+        display_all(temp)
+
+        return check
