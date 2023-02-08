@@ -4,9 +4,7 @@ print ("*********************  CARLOS, JOMARI MIGUEL   *********************")
 
 import sys
 
-people = []
-
-isRunning = True
+contact = []
 
 def menu():
     print("\n\n********************************************************************")
@@ -25,24 +23,18 @@ def menu():
 
     sel = input("Pick One: ")
 
-    if sel == "1":
+def add_contact(pb):
 
-        person = []
-        print("\n" * 50)
+        print("ADD CONTACT")
+            contact.append(str(input("\nEnter First name: ")).capitalize())
+            contact.append(str(input("Enter Last name: ")).capitalize())
+            contact.append(str(input("Enter address: ")).capitalize())
+            contact.append(int(input("Enter number: ")))
+            print("\t", contact)
+            for i in range(len(pb)):
+                if contact == pb[i]:
 
-        name = input("Name: ")
-        person.append(name)
-
-        age = input("Age: ")
-        person.append(age)
-
-        address = input("Address: ")
-        person.append(address)
-
-        phoneNumber = input("Phone Number: ")
-        person.append(phoneNumber)
-
-        people.append(person)
+        pb.append(contact)
 
     elif sel == "2":
 
