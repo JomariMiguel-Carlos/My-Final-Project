@@ -172,3 +172,19 @@ while choice in (0, 1, 2, 3, 4, 5):
     if choice == 1:
         add_book = add_contact(add_book)
         cnum += 1
+
+    elif choice == 2:
+        add_book = edit_contact(add_book)
+
+    elif choice == 3:
+        add_book = remove_existing(add_book)
+        cnum -= 1
+
+    elif choice == 4:
+        display_all(add_book)
+    elif choice == 5:
+        d = search_existing(add_book)
+        if d == -1:
+            print("The contact does not exist. Please try again")
+    else:
+        thanks()
