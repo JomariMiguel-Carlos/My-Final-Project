@@ -65,7 +65,7 @@ def edit_contact(pb):
             temp += 1
             print(pb[i])
             choice = int(input(
-                "Enter data you want to change\n\n\t1. First Name\n\t2. Last Number\n\t3. Address\n\t4. Contact Number\nPlease enter: "))
+                "Enter data you want to change\n\n\t1. First Name\n\t2. Last Name\n\t3. Address\n\t4. Contact Number\nPlease enter: "))
             new = []
             new = pb[i]
             print(new)
