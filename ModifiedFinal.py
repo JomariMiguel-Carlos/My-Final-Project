@@ -155,3 +155,10 @@ def search_existing(pb):
         display_all(temp)
 
         return check
+
+def thanks():
+    print("********************************************************************")
+    print("Thank you for using Smartphone directory system.")
+    print("Please visit again!")
+    print("********************************************************************")
+    sys.exit("Goodbye, have a nice day ahead!")
