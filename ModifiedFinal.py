@@ -24,22 +24,21 @@ def menu():
     sel = input("Pick One: ")
 
 def add_contact(pb):
+    print("ADD CONTACT")
+    contact.append(str(input("\nEnter First name: ")).capitalize())
+    contact.append(str(input("Enter Last name: ")).capitalize())
+    contact.append(str(input("Enter address: ")).capitalize())
+    contact.append(int(input("Enter number: ")))
+    print("\t", contact)
+    for i in range(len(pb)):
+        if contact == pb[i]:
 
-        print("ADD CONTACT")
-            contact.append(str(input("\nEnter First name: ")).capitalize())
-            contact.append(str(input("Enter Last name: ")).capitalize())
-            contact.append(str(input("Enter address: ")).capitalize())
-            contact.append(int(input("Enter number: ")))
-            print("\t", contact)
-            for i in range(len(pb)):
-                if contact == pb[i]:
+            pb.append(contact)
 
-        pb.append(contact)
-
-        return pb
+    return pb
 
 def edit_contact(pb):
-print("\t\t\t            EDIT EXISTING CONTACT")
+    print("\t\t\t            EDIT EXISTING CONTACT")
     query =str(input("Please enter the First name of the contact you wish to change: ")).capitalize()
     temp = 0
 
@@ -84,20 +83,17 @@ print("\t\t\t            EDIT EXISTING CONTACT")
 def remove_existing(pb):
     print("\t\t\t            REMOVE EXISTING CONTACT")
     query = str(input("Please enter the First name of the contact you wish to remove: ")).capitalize()
+    temp = 0
 
-        temp = 0
+    for i in range(len(pb)):
+        if query == pb[i][0]:
+            temp += 1
 
-        for i in range(len(pb)):
-            if query == pb[i][0]:
-                temp += 1
+            print(pb.pop(i))
 
-                print(pb.pop(i))
+            print("This query has now been removed :)")
 
-                print("This query has now been removed :)")
-
-                keme = input("Hit Enter to go back to Main Menu...")
-
-                return pb
+            return pb
 
 def display_all(pb):
     print("\t\t\t            ALL CONTACTS")
