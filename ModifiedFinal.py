@@ -1,17 +1,26 @@
+print ("\n*********************      FINAL PROJECT       *********************")
+print ("\n\n*********************      PROGRAMMED BY       *********************")
+print ("*********************  CARLOS, JOMARI MIGUEL   *********************")
+
 people = []
 
 isRunning = True
 
 while isRunning:
 
-    print("\n" * 50)
-    print("================")
-    print("1: Add Person")
-    print("2: Delete Person")
-    print("3: List People")
-    print("4: Quit")
-    print("================")
-    print("\n")
+    print("\n\n********************************************************************")
+    print("*\t\t\t            Address Book Main                          *")
+    print("********************************************************************")
+    print("*\t             Welcome to My Phone Book                          *")
+    print("* You can now perform the following operations on this phonebook   *")
+    print("********************************************************************")
+    print("*\t1. Add a new Contact                                           *")
+    print("*\t2. Edit a Contact                                              *")
+    print("*\t3. Delete Contact                                              *")
+    print("*\t4. Display all contacts                                        *")
+    print("*\t5. Search for a contact                                        *")
+    print("*\t6. Exit Address Book                                           *")
+    print("********************************************************************\n")
 
     sel = input("Pick One: ")
 
