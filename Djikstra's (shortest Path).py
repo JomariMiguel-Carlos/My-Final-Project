@@ -20,6 +20,11 @@ s = 0
 e = 0
 array_path = []
 
+for x in range(19 * 30):
+    d.append(999)
+    p.append(-1)
+    visited.append(0)
+
 def dijk():
     global u, s, e
     s = start.grid_info()["row"] * 30 + start.grid_info()["column"]
@@ -31,3 +36,9 @@ def dijk():
             if (d[j] < mini) and (visited[j] == 0):
                 mini = d[j]
                 u = j
+
+        visited[u] = 1
+        for v in range(570):
+            if ((d[u] + matrix[u][v]) < d[v]) and (u != v) and (visited[v] == 0):
+                d[v] = d[u] + matrix[u][v]
+                p[v] = u
