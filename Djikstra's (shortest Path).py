@@ -130,3 +130,50 @@ def restart():
         visited.append(0)
 
     make_grid()
+
+def backtrack():
+    if len(array_path) == 0:
+        print("No Path Found")
+    global c, find
+    for ele in array_path[:-1]:
+        c = 0
+        r, col = counter(ele)
+        grid[r][col]["bg"] = "green"
+    find = True
+
+def start_func():
+    if count == 0 or count == 1:
+        pass
+    elif not find:
+        make_matrix()
+        dijk()
+        display(s, 570)
+        backtrack()
+
+def start_fun():
+    global btn, rst, start
+    btn = Button(root, text="START", command=start_func)
+    btn.grid(row=30, column=17, columnspan=2)
+    rst = Button(root, text="RESTART", command=restart)
+    rst.grid(row=30, column=10, columnspan=3)
+
+
+def click(event):
+    global count, start, end
+    if count == 0 and event.widget != btn and event.widget != rst:
+        start = event.widget
+        start["bg"] = "blue"
+        count += 1
+    elif count == 1 and event.widget != btn and event.widget != start and event.widget != rst:
+        end = event.widget
+        end["bg"] = "red"
+        count += 1
+    else:
+        if event.widget != start and event.widget != end and event.widget != btn and event.widget != rst and not find:
+            event.widget["bg"] = "black"
+            count += 1
+
+make_grid()
+start_fun()
+root.bind("<Button-1>", click)
+root.mainloop()
